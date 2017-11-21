@@ -1,0 +1,53 @@
+define([
+    'jquery'
+], function ($) {
+    'use strict';
+
+    return function (config) {
+        var i, j, a;
+        var item = document.getElementsByClassName('item -level2');
+        var menu = document.getElementsByClassName('-parent -level1');
+        var parent = document.getElementsByClassName('menu')[0];
+
+
+        // ------------   puts eventListener on all -parent menu items
+
+        function addEventListenerList(list, event, fn) {
+            for (var i = 0, len = list.length; i < len; i++) {
+                list[i].addEventListener(event, fn, false);
+                console.log('test');
+            }
+        }
+
+        addEventListenerList(menu, 'click', makeDefault);
+
+        // menu[0].addEventListener('click', makeDefault);
+
+        function makeDefault () {
+            for (j = 0; j < parent.children.length; j++) {
+                parent.children[j].classList.remove('hide');
+                parent.children[j].classList.remove('-open');
+            }
+            console.log('hrl');
+        };
+
+
+        for (i = 0; i < item.length; i++) {
+            item[i].onclick = function () {
+                if (this.classList.contains('show') === false) {
+                    for (a = 0; a < item.length; a++) {
+                        item[a].classList.add('hide');
+                    }
+                    this.classList.add('show');
+                    this.classList.remove('hide');
+
+                } else {
+                    for (a = 0; a < item.length; a++) {
+                        item[a].classList.remove('hide');
+                    }
+                    this.classList.remove('show');
+                }
+            };
+        }
+    };
+});
