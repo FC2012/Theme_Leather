@@ -1,0 +1,135 @@
+.container {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.wrapper {
+  width: 300px;
+  height: 400px;
+}
+
+.body {
+  z-index: -1;
+  background: #333;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  //display: flex;
+  //flex-wrap: wrap;
+}
+
+.round {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 99;
+    opacity: 1;
+    transition: opacity 0.5s;
+    transition-timing-function: ease-in;
+  
+  > .nav {
+    font-weight: bold;
+    padding: 10px;
+  }
+}
+
+.sq {
+    width: 50%;
+    transition: left 0.5s, top 0.5s, right 0.5s, bottom 0.5s;  
+    position: absolute;
+  }
+
+.s1{ 
+     height: 50%;
+     top: 0;
+     left: 0;
+  }
+.s2{
+     height: 50%;
+     top: 0;
+     right: 0;
+}
+
+.s3{height: 50%;
+     bottom: 0;
+     left: 0}
+
+.s4{ height: 50%;
+     bottom: 0;
+     right: 0}
+
+@coolor_1: #1ef;
+.re { background: darken(@coolor_1, 10%); }
+.bl {background: darken(@coolor_1, 15%); }
+.gr {background: darken(@coolor_1, 15%); }
+.ye {background: darken(@coolor_1, 18%); }
+
+.cross {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  z-index: 0;
+  background: black;
+  top: 20px;
+  right: 20px;
+}
+
+.-active1 {
+  //width: 0;
+  //height: 0;
+  top: -50%;
+  left: -50%;
+}
+
+.-active2 {
+  //width: 0;
+  //height: 0;
+  z-index: -1;
+  top: -50%;
+  right: -50%;
+}
+
+.-active3 {
+  //width: 0;
+  //height: 0;
+  bottom: -50%;
+  left: -50%;
+}
+
+.-active4 {
+  //width: 0;
+  //height: 0;
+  bottom: -50%;
+  right: -50%;
+}
+
+.-activeROU {
+  //display: none;
+  opacity: 0;
+}
+
+.txt {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  > .txt-t {
+    font-size: 35px;
+    color: white;
+    padding: 20px;
+  }
+}
