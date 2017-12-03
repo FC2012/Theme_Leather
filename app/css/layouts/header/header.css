@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100px;
+  border-bottom: 3px solid white;
+}
+.header > .container-logo {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.header > .container-logo > .logo {
+  display: inline-block;
+  width: 50%;
+}
+.header > .settings {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.header > .settings > .settings-row1 {
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header > .settings > .settings-row2 {
+  color: #fff;
+}
+.header > .settings > .settings-row2 > .slogan {
+  margin: 0 auto;
+  letter-spacing: 5px;
+}
