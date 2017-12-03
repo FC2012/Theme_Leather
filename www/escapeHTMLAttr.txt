@@ -1,0 +1,10 @@
+$block->escapeHtml()
+$block->escapeJs()
+$block->escapeHtmlAttr()
+$block->escapeUrl()
+
+примерные правила по методам:
+- если дальше getUrl или внутри href, src, action - escapeUrl
+- если внутри атрибута - escapeHtmlAttr
+- если внутри тега - escapeHtml
+- если внутри script, data-mage-init, data-bind и т.п. - escapeJs
